@@ -1,6 +1,6 @@
 {
   "name": "mantine-contextmenu",
-  "version": "8.3.13",
+  "version": "9.0.1-alpha",
   "description": "Craft your applications for productivity and meet your users’ expectations by enhancing your Mantine-based UIs with a desktop-grade, lightweight yet fully-featured, dark-theme aware context-menu component, built by the creator of Mantine DataTable",
   "keywords": [
     "ui",
@@ -105,7 +105,7 @@
     "shiki": "^4.0.2",
     "swr": "^2.4.1",
     "tsup": "^8.5.1",
-    "typescript": "^6.0.2"
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "@mantine/core": ">=9.0",

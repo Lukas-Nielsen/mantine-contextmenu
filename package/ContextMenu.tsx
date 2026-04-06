@@ -33,11 +33,10 @@ export function ContextMenu({
   dir = 'ltr',
 }: ContextMenuProps) {
   const { shadow, borderRadius } = useContext(ContextMenuSettingsCtx);
-  const [paperRef] = useResizeObserver<HTMLDivElement>();
+  const [paperRef, entry] = useResizeObserver<HTMLDivElement>();
   const [isMounted, setIsMounted] = useState(false);
 
-  // eslint-disable-next-line react-hooks/refs
-  const { width, height } = paperRef.current?.getBoundingClientRect() || { width: 0, height: 0 };
+  const { width, height } = { width: entry.width || 0, height:entry.height || 0 };
 
   let windowWidth = 0;
   let windowHeight = 0;
