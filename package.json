@@ -1,6 +1,6 @@
 {
   "name": "mantine-contextmenu",
-  "version": "9.0.1-alpha",
+  "version": "9.0.1-alpha.1",
   "description": "Craft your applications for productivity and meet your users’ expectations by enhancing your Mantine-based UIs with a desktop-grade, lightweight yet fully-featured, dark-theme aware context-menu component, built by the creator of Mantine DataTable",
   "keywords": [
     "ui",
@@ -66,7 +66,7 @@
   "scripts": {
     "dev": "next dev --turbo",
     "prepare": "pnpm run build:package",
-    "build:package": "rm -rf dist; tsup --config scripts/tsup.esm.ts; tsup --config scripts/tsup.cjs.ts; tsup --config scripts/tsup.dts.ts; postcss package/styles*.css -d dist -m",
+    "build:package": "tsup --config scripts/tsup.esm.ts; tsup --config scripts/tsup.cjs.ts; tsup --config scripts/tsup.dts.ts; postcss package/styles*.css -d dist -m",
     "build:docs": "next build",
     "build": "pnpm build:package && pnpm build:docs",
     "lint": "eslint . && tsc --noEmit --pretty",
