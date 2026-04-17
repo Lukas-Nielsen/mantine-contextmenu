@@ -66,7 +66,7 @@
   "scripts": {
     "dev": "next dev --turbo",
     "prepare": "pnpm run build:package",
-    "build:package": "tsup --config scripts/tsup.esm.ts; tsup --config scripts/tsup.cjs.ts; tsup --config scripts/tsup.dts.ts; postcss package/styles*.css -d dist -m",
+    "build:package": "tsup --config scripts/tsup.esm.ts; tsup --config scripts/tsup.cjs.ts; tsup --config scripts/tsup.dts.ts; postcss package/styles*.css -d dist",
     "build:docs": "next build",
     "build": "pnpm build:package && pnpm build:docs",
     "lint": "eslint . && tsc --noEmit --pretty",
