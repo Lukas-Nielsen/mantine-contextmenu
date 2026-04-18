@@ -1,0 +1,39 @@
+name: Publish NPM Package
+ 
+on:
+  push:
+    branches:
+      - main  # Change this to the branch you want to publish from
+ 
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+ 
+    steps:
+      - uses: actions/checkout@v4
+ 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'  # Adjust for the version your project needs
+          registry-url: 'https://npm.pkg.github.com/'
+
+      - uses: pnpm/action-setup@v6
+        name: Install pnpm
+        with:
+          version: 10
+          cache: true
+ 
+      - name: Install dependencies
+        run: pnpm install
+ 
+      - name: Build package
+        run: pnpm run build:package
+ 
+      - name: Publish to GitHub Packages Registry
+        run: pnpm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

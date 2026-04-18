@@ -1,6 +1,6 @@
 {
-  "name": "mantine-contextmenu",
-  "version": "9.0.1-alpha.1",
+  "name": "@lukas-nielsen/mantine-contextmenu",
+  "version": "9.0.1-alpha.2",
   "description": "Craft your applications for productivity and meet your users’ expectations by enhancing your Mantine-based UIs with a desktop-grade, lightweight yet fully-featured, dark-theme aware context-menu component, built by the creator of Mantine DataTable",
   "keywords": [
     "ui",
@@ -23,20 +23,17 @@
     "usability",
     "component"
   ],
-  "repository": "icflorescu/mantine-contextmenu",
-  "homepage": "https://icflorescu.github.io/mantine-contextmenu/",
-  "bugs": {
-    "url": "https://github.com/icflorescu/mantine-contextmenu/issues"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lukas-Nielsen/mantine-contextmenu.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "license": "MIT",
   "author": {
-    "name": "Ionut-Cristian Florescu",
-    "email": "ionut.florescu@gmail.com",
-    "url": "https://github.com/icflorescu"
-  },
-  "funding": {
-    "type": "github",
-    "url": "https://github.com/sponsors/icflorescu"
+    "name": "Lukas Nielsen",
+    "url": "https://github.com/Lukas-Nielsen"
   },
   "files": [
     "./dist",
@@ -66,7 +63,7 @@
   "scripts": {
     "dev": "next dev --turbo",
     "prepare": "pnpm run build:package",
-    "build:package": "tsup --config scripts/tsup.esm.ts; tsup --config scripts/tsup.cjs.ts; tsup --config scripts/tsup.dts.ts; postcss package/styles*.css -d dist",
+    "build:package": "rm -rf dist; tsup --config scripts/tsup.esm.ts; tsup --config scripts/tsup.cjs.ts; tsup --config scripts/tsup.dts.ts; postcss package/styles*.css -d dist -m",
     "build:docs": "next build",
     "build": "pnpm build:package && pnpm build:docs",
     "lint": "eslint . && tsc --noEmit --pretty",
