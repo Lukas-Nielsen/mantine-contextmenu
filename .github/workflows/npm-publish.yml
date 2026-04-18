@@ -14,21 +14,22 @@ jobs:
  
     steps:
       - uses: actions/checkout@v4
- 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 'lts/*'  # Adjust for the version your project needs
-          registry-url: 'https://npm.pkg.github.com/'
 
-      - uses: pnpm/action-setup@v6
+      - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
           version: 10
           cache: true
  
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          registry-url: 'https://npm.pkg.github.com/'
+          cache: pnpm
+ 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
  
       - name: Build package
         run: pnpm run build:package

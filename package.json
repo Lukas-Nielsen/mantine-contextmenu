@@ -62,7 +62,6 @@
   ],
   "scripts": {
     "dev": "next dev --turbo",
-    "prepare": "pnpm run build:package",
     "build:package": "rm -rf dist; tsup --config scripts/tsup.esm.ts; tsup --config scripts/tsup.cjs.ts; tsup --config scripts/tsup.dts.ts; postcss package/styles*.css -d dist -m",
     "build:docs": "next build",
     "build": "pnpm build:package && pnpm build:docs",
