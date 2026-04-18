@@ -28,7 +28,7 @@
     "url": "https://github.com/Lukas-Nielsen/mantine-contextmenu.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://registry.npmjs.org"
   },
   "license": "MIT",
   "author": {
