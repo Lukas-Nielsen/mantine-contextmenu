@@ -109,5 +109,6 @@
     "clsx": ">=2",
     "react": ">=19",
     "react-dom": ">=19"
-  }
+  },
+  "private": false
 }
